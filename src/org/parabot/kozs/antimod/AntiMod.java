@@ -13,6 +13,13 @@ public class AntiMod {
 	
 	private final ServerType serv;
 	
+	public boolean compareName(String name) {
+		if (mods.contains(name)) {
+			return true;
+		}
+		return false;
+	}
+	
 	public AntiMod(ServerType serverType) {
 		this.serv = serverType;
 		URL url;

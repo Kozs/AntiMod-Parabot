@@ -7,6 +7,7 @@ public class TestMain {
 		AntiMod am = new AntiMod(ServerType.PKHONOR);
 		System.out.println("------------------------------------------");
 		System.out.println("Server Name: " + am.getServ().getName());
+		System.out.println("Mike Staff? " + am.compareName("Mike"));
 	}
 
 }

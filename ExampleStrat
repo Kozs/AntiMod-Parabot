@@ -1,0 +1,33 @@
+package org.parabot.kozs.kAntiMod;
+
+import java.awt.Toolkit;
+
+import org.parabot.environment.scripts.framework.Strategy;
+import org.parabot.kozs.antimod.AntiMod;
+import org.parabot.kozs.antimod.ServerType;
+import org.rev317.min.api.methods.Players;
+import org.rev317.min.api.wrappers.Player;
+
+public class PKHMods implements Strategy
+
+{
+	AntiMod am = new AntiMod(ServerType.PKHONOR);
+	final Runnable runnable = (Runnable) Toolkit.getDefaultToolkit().getDesktopProperty("win.sound.exclamation");
+
+	@Override
+	public boolean activate() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void execute() {
+		for (Player p : Players.getPlayers()) {
+			String pName = p.getName();
+			if (am.compareName(pName)) {
+				if (runnable == null) return;
+					runnable.run();
+			}
+		}
+	}
+}
